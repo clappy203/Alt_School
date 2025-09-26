@@ -1,0 +1,119 @@
+/* Basic variables */
+:root{
+  --bg: #e9f2f6;
+  --card-bg: #89c5e0;
+  --card-border: #7a7a7a;
+  --max-width: 1100px;
+  --gap: 18px;
+  --radius: 10px;
+  --text: #0b2433;
+}
+
+/* Reset-ish */
+* { box-sizing: border-box; }
+html,body { height: 100%; margin:0; font-family: "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 22px auto;
+  padding: 12px;
+  display: grid;
+  gap: var(--gap);
+}
+
+/* Top card: avatar + about */
+.top-card{
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  min-height: 170px;
+}
+
+/* Avatar */
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 120px;
+  border: 4px solid var(--text);
+  background: #fff;
+}
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* About text */
+.about { flex: 1; }
+.about h1 { margin: 0 0 8px 0; font-size: 26px; }
+.about p { margin:0; font-size: 14px; line-height: 1.5; }
+
+/* Lower row cards */
+.lower {
+  display: grid;
+  gap: var(--gap);
+}
+.card {
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  min-height: 220px;
+}
+.card h2 { margin:0 0 10px 0; font-size:22px; text-align:center; }
+.card p { margin:0 0 12px 0; font-size:14px; text-align:center; }
+.list { margin:0; padding-left:20px; max-width:620px; margin-left:auto; margin-right:auto; font-size:14px; line-height:1.6; }
+
+/* Responsive rules */
+
+/* Small screens: stack everything, center content */
+@media (max-width: 599px) {
+  .top-card{
+    flex-direction: column;
+    text-align: center;
+    padding: 18px 14px;
+    min-height: auto;
+  }
+
+  .avatar { width: 110px; height: 110px; flex: 0 0 110px; }
+  .about h1 { font-size:20px; margin-top:6px; }
+  .about p { font-size:14px; }
+
+  .lower { grid-template-columns: 1fr; }
+  .card p, .list { text-align: left; margin-left: 6px; margin-right:6px; }
+  .card h2 { text-align:center; }
+}
+
+/* Medium screens: two columns for lower row */
+@media (min-width: 600px) and (max-width: 899px) {
+  .top-card { padding: 20px; min-height: 160px; }
+  .lower { grid-template-columns: 1fr 1fr; }
+  .about h1 { font-size:22px; }
+  .about p { font-size:14px; }
+}
+
+/* Desktop: wider layout */
+@media (min-width: 900px) {
+  .top-card { padding: 28px; min-height: 200px; }
+  .avatar { width: 160px; height: 160px; flex: 0 0 160px; }
+  .about h1 { font-size: 32px; text-align: left; }
+  .about p { font-size: 15px; text-align: left; max-width: 900px; }
+  .lower { grid-template-columns: 1fr 1fr; }
+  .card h2 { font-size: 28px; }
+  .card p { text-align: left; }
+  .list { margin-left: 0; margin-right: 0; }
+}
+
+/* small visual tweak for focus/print */
+a:focus { outline: 3px dashed rgba(11,36,51,0.25); outline-offset: 2px; }
+@media print {
+  :root { --card-bg: #fff; --card-border: #000; background: #fff; }
+}
