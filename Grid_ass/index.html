@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Cla-Petra</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>aboutme</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Top: avatar + About -->
-    <section class="top-card" aria-labelledby="about-heading">
-      <div class="avatar" role="img" aria-label="Cla-Petra portrait">
-        <img src="./assets/images/my_profile_pic.jpg" alt="Cla-Petra Omaku" />
+  <div class="grid-container">
+
+    <!-- About / profile -->
+    <div class="grid-item" aria-labelledby="about-heading">
+      <div class="circle" role="img" aria-label="Cla-Petra portrait">
+        <img src="./assets/images/my_profile_pic.jpg" alt="Cla-Petra Omaku"">
       </div>
 
-      <div class="about">
-        <h1 id="about-heading">About Me</h1>
+      <div class="content">
+        <h1>About Me</h1>
         <p>
           I’m <strong>Cla-Petra Omaku</strong> from Kogi State. I hold a B.Sc. in Quantity
-          Surveying (Ahmadu Bello University) and now work as a business analyst on a software team.
-          I translate stakeholder needs into user stories, define acceptance criteria, and coordinate product, design and engineering to deliver useful features.
+          Surveying from Ahmadu Bello University, Zaria. I now work as a business analyst
+          on a software team — translating stakeholder needs into clear user stories,
+          defining acceptance criteria, and coordinating product, design and engineering
+          to deliver useful features.
         </p>
       </div>
-    </section>
+    </div>
 
-    <!-- Lower row: Hobbies and Aspirations -->
-    <div class="lower">
+    <!-- Hobbies -->
+    <div class="grid-item" aria-labelledby="hobbies-heading">
+      <h1 id="hobbies-heading">My Hobbies</h1>
+      <p>These are a few of my favorite hobbies that I enjoy during my free time.</p>
 
-      <section class="card" aria-labelledby="hobbies-heading">
-        <h2 id="hobbies-heading">My Hobbies</h2>
-        <p>Things I enjoy and practice in my free time:</p>
-        <ul class="list">
-          <li>Data analytics and dashboards (Power BI)</li>
-          <li>Designing automations and low-code apps</li>
-          <li>Learning cloud technologies and AWS migrations</li>
-          <li>Improving processes through measurement and iteration</li>
-          <li>Collaborating, mentoring and sharing knowledge</li>
-        </ul>
-      </section>
+      <ul class="list-item">
+        <li>Reading.</li>
+        <li>Tourism and Hanging out with friends and colleagues</li>
+        <li>Researching</li>
+        <li>Fashion and art</li>
+      </ul>
+    </div>
 
-      <section class="card" aria-labelledby="goals-heading">
-        <h2 id="goals-heading">Aspirations</h2>
-        <p>Short and medium-term goals I’m working toward:</p>
-        <ul class="list">
-          <li>Deepen cloud engineering skills (distributed & resilient design)</li>
-          <li>Strengthen testing, CI/CD and observability</li>
-          <li>Write clearer technical specs and design maintainable APIs</li>
-          <li>Grow communication and leadership to mentor teams</li>
-          <li>Build systems that remove tedious work and scale reliably</li>
-        </ul>
-      </section>
+    <!-- Aspirations -->
+    <div class="grid-item" aria-labelledby="aspirations-heading">
+      <h1 id="aspirations-heading">Aspirations in life</h1>
+      <p>
+        Short- and medium-term goals: deepen cloud engineering skills (distributed systems,
+        resilient design, cloud security); strengthen software engineering practices
+        (testing, CI/CD, observability); write clearer technical specs and design
+        maintainable APIs; grow communication and leadership to mentor teams; and build
+        systems that remove tedious work and scale reliably in production.
+      </p>
+    </div>
 
-    </div> <!-- /.lower -->
-  </div> <!-- /.container -->
+  </div>
 </body>
 </html>
