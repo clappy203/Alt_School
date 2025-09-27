@@ -12,13 +12,12 @@
   font-size: clamp(18px, 4vw, 20px);
   padding: 20px 12px;
   justify-self: start;
-  border: 1px solid black;
 }
 
 li{
     margin-bottom: 10px;
     display: -ms-inline-grid;
-    border: 1px solid black;
+
 }
 
 p {
