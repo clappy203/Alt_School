@@ -35,7 +35,6 @@ h1 {
   display: grid;
   align-items: center;
   column-gap: 16px;
-  margin-left: 100px;
 }
 
 header{
