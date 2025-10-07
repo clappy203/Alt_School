@@ -4,7 +4,6 @@ const stopButton = document.getElementsByClassName("stop")[0];
 const resetButton = document.getElementsByClassName("reset")[0];
 const lapButton = document.getElementsByClassName("lap")[0];
 const clearLapsButton = document.getElementsByClassName("clear-laps")[0];
-const themeToggle = document.getElementById('theme-toggle');
 
 
 // Select individual time unit span elements to preserve styling
@@ -145,20 +144,35 @@ clearLapsButton.onclick = () => {
     console.log("Clear Laps button clicked - All laps cleared");
 }
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById("theme-toggle");
 
-// themeToggle.addEventListener('click', () => {
-//     const current = document.documentElement.getAttribute('data-theme');
+// Check for saved theme preference or default to dark theme
+const currentTheme = localStorage.getItem("theme") || "dark";
+
+// Apply the saved theme on page load
+if (currentTheme === "light") {
+    document.body.classList.add("light-theme");
+    themeToggle.textContent = "☀️"; // Sun icon for light mode
+} else {
+    themeToggle.textContent = "🌙"; // Moon icon for dark mode
+}
+
+// Theme toggle button functionality
+themeToggle.onclick = () => {
+    document.body.classList.toggle("light-theme");
     
-//     if (current === 'dark') {
-//         // Currently dark, switch to light
-//         document.documentElement.removeAttribute('data-theme');
-//         themeToggle.textContent = '☀️';  // Show sun (now in light mode)
-//         console.log('Switched to light theme');
-//     } else {
-//         // Currently light (or no theme), switch to dark
-//         document.documentElement.setAttribute('data-theme', 'dark');
-//         themeToggle.textContent = '🌙';  // Show moon (now in dark mode)
-//         console.log('Switched to dark theme');
-//     }
-// });
+    // Update button icon and save preference
+    if (document.body.classList.contains("light-theme")) {
+        themeToggle.textContent = "☀️"; // Sun icon for light mode
+        localStorage.setItem("theme", "light");
+        console.log("Switched to light theme");
+    } else {
+        themeToggle.textContent = "🌙"; // Moon icon for dark mode
+        localStorage.setItem("theme", "dark");
+        console.log("Switched to dark theme");
+    }
+};
+
+
 
