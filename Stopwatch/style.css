@@ -1,3 +1,29 @@
+/* CSS Variables for Theme Colors */
+:root {
+    --bg-color: #1b1b1b;
+    --text-color: #fff;
+    --circle-bg: #fff;
+    --circle-inner-bg: #1b1b1b;
+    --border-color: wheat;
+    --button-bg: #1b1b1b;
+    --button-text: white;
+    --button-hover-bg: grey;
+    --button-hover-text: #1b1b1b;
+}
+
+/* Light Theme */
+body.light-theme {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --circle-bg: #333;
+    --circle-inner-bg: #f0f0f0;
+    --border-color: #333;
+    --button-bg: #f0f0f0;
+    --button-text: #333;
+    --button-hover-bg: #333;
+    --button-hover-text: #f0f0f0;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,51 +33,50 @@
 
 h1{
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 20px;
     font-size: 30px;
 }
 
-[data-theme="dark"] {
-    --bg-color: black;
-    --text-color: white;
-}
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1b1b1b;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
 }
 
 .outer-circle{
     width: 250px;
     height: 250px;
-    background-color: #fff;
+    background-color: var(--circle-bg);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .inner-circle{
     width: 230px;
     height: 230px;
-    background-color: #1b1b1b;
+    background-color: var(--circle-inner-bg);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .laps {
     list-style: none;
     width: 250px;
     height: 250px;
-    color: white;
+    color: var(--text-color);
     overflow: auto;
     position: relative;
     padding: 30px 0;
@@ -65,12 +90,13 @@ body{
     display: inline-block;
     width: 100%;
     padding: 10px;
-    border: 1px solid wheat;
+    border: 1px solid var(--border-color);
     border-radius: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
-    color: white;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .lap-item .number{
@@ -79,9 +105,10 @@ body{
 }
 
 .text{
-    color: #fff;
+    color: var(--text-color);
     font-size: 24px;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .minutes, .hours{
@@ -108,15 +135,16 @@ button{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid white;
-    background-color: #1b1b1b;
-    color: white;
-    cursor: pointer
+    border: 2px solid var(--border-color);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover{
-    background-color: grey;
-    color:#1b1b1b;
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
 }
 
 
@@ -128,12 +156,13 @@ button:hover{
     z-index: 1000;
     width: 130px;
     border-radius: 50px;
-    border: 1px solid wheat;
+    border: 1px solid var(--border-color);
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     transform: translate(-50%);
     padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .display{
@@ -149,12 +178,18 @@ button:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid wheat;
+    border: 1px solid var(--border-color);
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
 }
